@@ -1,0 +1,10 @@
+/***********************************
+GENERAL
+***********************************/
+
+#wrapper section img {
+	width: 50%;
+	height: auto;
+	display: block;
+  margin: auto;
+}
