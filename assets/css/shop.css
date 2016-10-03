@@ -1,0 +1,42 @@
+
+
+body h1 {
+  text-align: center;
+}
+
+header h1 {
+  text-align: left;
+}
+
+h1 {
+  margin: 0;
+  padding: 10px;
+}
+
+.simpleCart_items table {
+	width: 95%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
+.simpleCart_items table thead {
+	color: black;
+}
+
+.simpleCart_remove {
+	color: red;
+}
+
+.simpleCart_checkout {
+	color: blue;
+}
+
+.item_name {
+	text-align: center;
+	font-size: 1.25em;
+}
+
+.simpleCart_empty {
+  color: red;
+}
