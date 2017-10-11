@@ -6,7 +6,7 @@ $(document).ready(function() {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
-        },        
+        },
         fields: {
             firstName: {
              message: 'The first name is not valid',
@@ -56,10 +56,24 @@ $(document).ready(function() {
                 message: 'Address is not valid',
                 validators: {
                     notEmpty: {
-                        message: 'Address is required and cannot be empty'
-                    }
+                        message: 'Number of tickets is required'
+                    },
+                    stringLength: {
+                        min: 1,
+                        max: 1,
+                        message: 'Must be a number between 1 - 4'
+                    },
+                    regexp: {
+                        regexp: /^[0-9]+$/,
+                        message: 'Must be a number between 1 - 4'
+                    },
+                    between: {
+                        min: 0,
+                        max: 4,
+                        message: 'Must be a number between 1 - 4'
+                   }
                 }
-            }, 
+            },
 
         }
     })
@@ -76,7 +90,7 @@ $(document).ready(function() {
         // Use Ajax to submit form data
         var url = 'https://script.google.com/a/benjackal.com/macros/s/AKfycbxlBavsrFtkOllROiV8bPiv4Q2StIY84AQxG0tZq3ekqUq289o/exec';
         var redirectUrl = 'success-page.html';
-        // show the loading 
+        // show the loading
         $('#postForm').prepend($('<span></span>').addClass('glyphicon glyphicon-refresh glyphicon-refresh-animate'));
         var jqxhr = $.post(url, $form.serialize(), function(data) {
             console.log("Success! Data: " + data.statusText);
@@ -87,7 +101,7 @@ $(document).ready(function() {
                 // HACK - check if browser is Safari - and redirect even if fail b/c we know the form submits.
                 if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
                     //alert("Browser is Safari -- we get an error, but the form still submits -- continue.");
-                    $(location).attr('href',redirectUrl);                
+                    $(location).attr('href',redirectUrl);
                 }
             });
     });
